@@ -15,10 +15,6 @@ cd pulse
 npm install && npm start
 ```
 
-## Other Example Apps
+#### License
 
-For more example apps, see the
-[list of boilerplates](http://electron.atom.io/community/#boilerplates)
-created by the awesome electron community.
-
-#### License [CC0 (Public Domain)](LICENSE.md)
+MIT © [C. Thomas Bailey](https://github.com/ctbailey)
