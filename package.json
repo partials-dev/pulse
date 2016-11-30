@@ -1,0 +1,57 @@
+{
+  "name": "pulse",
+  "version": "0.0.1",
+  "description": "A time-traveling metronome",
+  "main": "main.js",
+  "scripts": {
+    "clean": "rm -r ./js/dist || true",
+    "build": "npm run clean && babel ./js/src --out-dir ./js/dist",
+    "start": "npm run build && electron .",
+    "test": "npm run build && mocha ./js/dist/spec/**/*.spec.js",
+    "test-reducers": "mocha ./js/dist/spec/reducers/**/*.spec.js",
+    "test-components": "mocha ./js/dist/spec/components/**/*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/partials-dev/pulse.git"
+  },
+  "keywords": [],
+  "author": "C. Thomas Bailey",
+  "license": "",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "chai": "^3.5.0",
+    "chai-enzyme": "^0.5.1",
+    "deep-freeze": "0.0.1",
+    "electron-prebuilt": "^1.2.0",
+    "enzyme": "^2.4.1",
+    "jsdom": "^9.4.5",
+    "mocha": "^3.0.2",
+    "react-addons-test-utils": "^15.3.1",
+    "require-dir": "^0.3.0",
+    "sinon": "^1.17.5",
+    "spectron": "^3.3.0"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "electron-context-menu": "^0.8.0",
+    "electron-is-dev": "^0.1.2",
+    "jquery": "^3.1.0",
+    "keycode": "^2.1.7",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-mdl": "^1.9.0",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2",
+    "vkey": "^1.0.0",
+    "web-audio-scheduler": "^1.1.0",
+    "worker-timer": "^1.1.0",
+    "x-gif": "^1.0.5"
+  }
+}

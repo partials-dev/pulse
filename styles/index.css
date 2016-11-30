@@ -1,0 +1,59 @@
+* {
+  font-family: 'Work Sans', sans-serif;
+  -webkit-user-select: none;
+}
+
+/* Move the app window by dragging anywhere in the app */
+body {
+  -webkit-app-region: drag;
+}
+
+/* Except buttons and inputs */
+button,
+input {
+  -webkit-app-region: no-drag;
+}
+
+/* Use the default cursor for everything */
+*:active,
+*:hover {
+  cursor: default;
+}
+
+/* Except inputs, where we still use the normal text cursor */
+input:hover {
+  cursor: auto;
+}
+
+#container {
+  text-align: center;
+  margin-top: 60px;
+}
+
+input[type=number] {
+  width: 3em;
+  font-size: 0.8em;
+}
+
+input[type=number]:focus {
+  outline: none;
+  border: 2px solid lightgrey;
+  box-shadow: none;
+}
+
+#text-section {
+  margin-top: 30px;
+  font-size: 1.3em;
+}
+
+.action-button {
+  margin-top: 20px;
+  padding: 0.4rem;
+  line-height: 1rem;
+  vertical-align: text-bottom;
+  font-size: 1.5em;
+  background-color: white;
+  border: thin solid grey;
+  outline: none;
+  border-radius: 2px;
+}

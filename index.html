@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="styles/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="./node_modules/react-mdl/extra/material.css">
+    <link rel="import" href="./node_modules/x-gif/dist/x-gif.html">
+    <title>Pulse!</title>
+  </head>
+  <body id="container">
+    <x-gif id="spirit-animal" sync snap src="http://67.media.tumblr.com/4a2ecf3258e23674bc4b253fd74bfa81/tumblr_msz5x3ACVh1qcoae6o1_400.gif"></x-gif>
+    <div id="root">
+      <!-- This app uses React, so view components are in the components directory. -->
+    </div>
+  </body>
+
+  <script>
+    // You can also require other files to run in this process
+    window.jQuery = window.$ = require('jquery')
+    require('./node_modules/react-mdl/extra/material.min.js')
+    require('./js/dist/renderer.js')
+  </script>
+</html>
