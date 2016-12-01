@@ -15,6 +15,7 @@ const mainWindowOptions = {
   minWidth: 350,
   minHeight: 610
 }
+
 if (isDev) {
   mainWindowOptions.width = 800
   activateContextMenu()
