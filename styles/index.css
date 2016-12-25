@@ -1,6 +1,6 @@
 * {
   font-family: 'Work Sans', sans-serif;
-  -webkit-user-select: none;
+  user-select: none;
 }
 
 /* Move the app window by dragging anywhere in the app */
@@ -27,7 +27,7 @@ input:hover {
 
 #container {
   text-align: center;
-  margin-top: 60px;
+  padding-top: 60px;
 }
 
 input[type=number] {
@@ -50,10 +50,65 @@ input[type=number]:focus {
   margin-top: 20px;
   padding: 0.4rem;
   line-height: 1rem;
-  vertical-align: text-bottom;
+  vertical-align: middle;
   font-size: 1.5em;
   background-color: white;
-  border: thin solid grey;
+  border: none;
   outline: none;
   border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.action-button-text {
+  vertical-align: text-bottom;;
+}
+
+/* Icon animation */
+
+.icon-container {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  overflow: hidden;
+  margin: 5px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Play triangle */
+.icon {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  vertical-align: middle;
+  text-align: center;
+
+  border-top: 14px solid transparent;
+  border-right: 0px solid transparent;
+  border-left: 23px solid black;
+  border-bottom: 14px solid transparent;
+}
+
+/* Stop square */
+.icon-container::before {
+  content: "";
+  border-top: 14px solid black;
+  border-right: 14px solid black;
+  border-left: 14px solid black;
+  border-bottom: 14px solid black;
+}
+
+.icon-container.play::before {
+  transform: translateX(-26px);
+}
+
+.icon.stop {
+  transform: translateX(26px);
+}
+
+.icon,
+.icon-container::before {
+  transition: 120ms ease;
 }

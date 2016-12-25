@@ -7,9 +7,11 @@ function ActionButton ({ id, icon, message, onClick, onMouseDown, tabIndex }) {
     onClick={onClick}
     onMouseDown={onMouseDown}
     tabIndex={tabIndex}>
-      <i style={{ verticalAlign: 'text-bottom', marginRight: '0.5rem' }}
-        className='material-icons'>{icon}</i>
-      <span style={{marginRight: '0.55rem'}}>
+      <div className={`icon-container ${icon}`}>
+        <div className={`icon ${icon}`}>
+        </div>
+      </div>
+      <span className='action-button-text' style={{marginRight: '0.55rem'}}>
         {message}
       </span>
     </button>
