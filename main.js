@@ -21,7 +21,7 @@ if (isDev) {
   activateContextMenu()
 }
 
-// Keep a global reference of the window object, if you don't, the window will
+// Keep a global reference of the window object. If you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
