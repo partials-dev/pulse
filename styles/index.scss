@@ -28,6 +28,7 @@ input:hover {
 #container {
   text-align: center;
   padding-top: 60px;
+  min-height: inherit;
 }
 
 input[type=number] {
