@@ -31,7 +31,6 @@ function mapDispatchToProps (dispatch) {
     },
     onChange: (event) => {
       const bpm = parseInt(event.target.value, 10)
-      console.log('setting bpm: ' + bpm)
       dispatch({ type: 'SET_BPM', bpm })
     }
   }

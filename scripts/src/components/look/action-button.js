@@ -2,7 +2,7 @@ import React from 'react'
 
 function ActionButton ({ id, icon, message, onClick, onMouseDown, tabIndex }) {
   return <button
-    className='action-button'
+    className={`action-button ${icon}`}
     id={id}
     onClick={onClick}
     onMouseDown={onMouseDown}

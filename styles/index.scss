@@ -25,6 +25,10 @@ input:hover {
   cursor: auto;
 }
 
+button:hover * {
+  cursor: pointer;
+}
+
 #container {
   text-align: center;
   padding-top: 60px;
@@ -42,11 +46,30 @@ input[type=number]:focus {
   box-shadow: none;
 }
 
+// input {
+//   border: 0;
+// }
+//
+// label {
+//   position: relative;
+// }
+//
+// label::before {
+//   content: "";
+//   position: absolute;
+//   transform: translateY(20px);
+//   width: 70%;
+//   border-bottom: 1px solid lightgrey;
+// }
+
 .controls p {
   margin-top: 30px;
   margin-bottom: 0;
   font-size: 1.3em;
 }
+
+$button-color: #00e5ff;
+$button-contents-color: black;
 
 .controls button {
   margin-top: 20px;
@@ -55,9 +78,19 @@ input[type=number]:focus {
   vertical-align: middle;
   font-size: 1.5em;
   background-color: white;
+  color: $button-contents-color;
+  // border: 1px solid $button-color;
   border: none;
   outline: none;
   border-radius: 2px;
+  transition: 150ms ease-in;
+}
+
+.controls button.play {
+  box-shadow: 0 0 0 0 rgba(0,0,0,.14),0 0 0 0 rgba(0,0,0,.2),0 0 0 0 rgba(0,0,0,.12);
+}
+
+.controls button.stop {
   box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
 }
 
@@ -89,17 +122,17 @@ $three-quarters-icon-size: $icon-size * 0.75;
 
   border-top: $half-icon-size solid transparent;
   border-right: 0px solid transparent;
-  border-left: $three-quarters-icon-size solid black;
+  border-left: $three-quarters-icon-size solid $button-contents-color;
   border-bottom: $half-icon-size solid transparent;
 }
 
 /* Stop square */
 .icon-container::before {
   content: "";
-  border-top: $half-icon-size solid black;
-  border-right: $half-icon-size solid black;
-  border-left: $half-icon-size solid black;
-  border-bottom: $half-icon-size solid black;
+  border-top: $half-icon-size solid $button-contents-color;
+  border-right: $half-icon-size solid $button-contents-color;
+  border-left: $half-icon-size solid $button-contents-color;
+  border-bottom: $half-icon-size solid $button-contents-color;
 }
 
 .icon-container.play::before {
