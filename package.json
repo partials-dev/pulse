@@ -31,6 +31,7 @@
     "chai-enzyme": "^0.5.1",
     "deep-freeze": "0.0.1",
     "electron-prebuilt-compile": "^1.4.10",
+    "electron-rebuild": "^1.4.0",
     "enzyme": "^2.4.1",
     "jsdom": "^9.4.5",
     "mocha": "^3.0.2",

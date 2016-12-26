@@ -61,18 +61,20 @@ input[type=number]:focus {
 }
 
 .controls button span {
-  vertical-align: text-bottom;;
+  vertical-align: -0.4rem;
 }
 
 /* Icon animation */
+$icon-size: 16px; /* must be even */
+$half-icon-size: $icon-size / 2;
+$three-quarters-icon-size: $icon-size * 0.75;
 
 .icon-container {
-  width: 20px;
-  height: 20px;
+  width: $icon-size;
+  height: $icon-size;
   display: inline-flex;
   overflow: hidden;
   margin: 5px;
-  justify-content: center;
   align-items: center;
   position: relative;
 }
@@ -83,30 +85,28 @@ input[type=number]:focus {
   width: 0;
   height: 0;
   position: absolute;
-  vertical-align: middle;
-  text-align: center;
 
-  border-top: 8px solid transparent;
+  border-top: $half-icon-size solid transparent;
   border-right: 0px solid transparent;
-  border-left: 16px solid black;
-  border-bottom: 8px solid transparent;
+  border-left: $three-quarters-icon-size solid black;
+  border-bottom: $half-icon-size solid transparent;
 }
 
 /* Stop square */
 .icon-container::before {
   content: "";
-  border-top: 8px solid black;
-  border-right: 8px solid black;
-  border-left: 8px solid black;
-  border-bottom: 8px solid black;
+  border-top: $half-icon-size solid black;
+  border-right: $half-icon-size solid black;
+  border-left: $half-icon-size solid black;
+  border-bottom: $half-icon-size solid black;
 }
 
 .icon-container.play::before {
-  transform: translateX(-16px);
+  transform: translateX(-$icon-size);
 }
 
 .icon.stop {
-  transform: translateX(16px);
+  transform: translateX($icon-size);
 }
 
 .icon,
