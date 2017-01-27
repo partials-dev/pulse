@@ -17,6 +17,8 @@ import App from './components/app'
 import MetronomeContainer from './components/sound/metronome-container'
 import rootReducer from './reducers'
 
+import { updateQuery, getActionsToSyncWithQuery } from './query'
+
 const store = createStore(rootReducer)
 const dispatch = store.dispatch.bind(store)
 
@@ -25,7 +27,12 @@ store.subscribe(() => {
   const state = store.getState()
   console.log(JSON.stringify(state))
   MetronomeContainer({ state, dispatch })
+  updateQuery(state)
+  console.log(window.location.href)
 })
+
+getActionsToSyncWithQuery().forEach(dispatch)
+updateQuery(store.getState())
 
 // function currentBpm () {
 //   return parseInt(bpmSlider.val(), 10)
