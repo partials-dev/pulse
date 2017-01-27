@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import Gif from '../look/gif'
+import Gif from '../look/x-gif'
 import beatDurationAt from '../../beat-duration-at'
 
 const pikkiUrl = 'http://67.media.tumblr.com/4a2ecf3258e23674bc4b253fd74bfa81/tumblr_msz5x3ACVh1qcoae6o1_400.gif'
