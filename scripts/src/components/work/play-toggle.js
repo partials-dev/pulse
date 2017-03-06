@@ -5,7 +5,7 @@ import keycode from 'keycode'
 function mapStateToProps ({ play }) {
   // const message = play ? 'Stop' : 'Play'
   const message = 'Press Enter'
-  const icon = play ? 'stop' : 'play'
+  const icon = play ? 'playing' : 'stopped'
   return { message, icon, tabIndex: -1 }
 }
 

@@ -25,10 +25,9 @@ const dispatch = store.dispatch.bind(store)
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'))
 store.subscribe(() => {
   const state = store.getState()
-  console.log(JSON.stringify(state))
   MetronomeContainer({ state, dispatch })
-  updateQuery(state)
-  console.log(window.location.href)
+  updateQuery(state.tempo)
+  // console.log(JSON.stringify(state.search.page))
 })
 
 getActionsToSyncWithQuery().forEach(dispatch)

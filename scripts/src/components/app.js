@@ -1,30 +1,27 @@
 import React from 'react'
-import DeltaBpmInput from './work/delta-bpm-input'
-import PlayToggle from './work/play-toggle'
-import TempoInput from './work/tempo-input'
-import SpiritAnimal from './work/spirit-animal'
-import ChangeIntervalInput from './work/change-interval-input'
-import CurrentBpm from './work/current-bpm'
+import MetronomePage from './work/metronome-page'
+import SearchPage from './work/search'
 
-function App () {
+import { connect } from 'react-redux'
+
+function mapStateToProps ({ search }) {
+  return {
+    showSearch: search.show
+  }
+}
+
+function mapDispatchToProps () {
+  return {}
+}
+
+function App ({ showSearch }) {
+  const showIfSearching = showSearch ? null : { display: 'none' }
+  const showUnlessSearching = showSearch ? { display: 'none' } : null
+
   return <div>
-    <section className='state'>
-      <SpiritAnimal />
-      <CurrentBpm />
-    </section>
-
-    <section className='controls'>
-      <p>
-        Start at <TempoInput tabIndex='1' /> beats per minute.
-        <br />
-        Change by <DeltaBpmInput tabIndex='2' /> bpm,
-        <br />
-        every <ChangeIntervalInput tabIndex='3' /> beats.
-        <br />
-      </p>
-      <PlayToggle />
-    </section>
+    <SearchPage style={showIfSearching} />
+    <MetronomePage style={showUnlessSearching} />
   </div>
 }
 
-export default App
+export default connect(mapStateToProps, mapDispatchToProps)(App)

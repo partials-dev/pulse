@@ -13,16 +13,18 @@ function mapStateToProps ({ tempo: { bpm } }) {
   }
 }
 
+function shouldFocus (event) {
+  const number = parseInt(keycode(event), 10)
+  const didPressNumber = !Number.isNaN(number)
+  const activeElementIsInput = document.activeElement.nodeName.toLowerCase() === 'input'
+  return didPressNumber && !activeElementIsInput
+}
+
 function mapDispatchToProps (dispatch) {
   return {
     gotRef: (numberInput) => {
-      document.addEventListener('keydown', (e) => {
-        const number = parseInt(keycode(e), 10)
-        const didPressNumber = !Number.isNaN(number)
-        const activeElementIsInput = document.activeElement.nodeName.toLowerCase() === 'input'
-        const shouldFocus = didPressNumber && !activeElementIsInput
-
-        if (shouldFocus) {
+      document.addEventListener('keydown', (event) => {
+        if (shouldFocus(event)) {
           numberInput.focus()
           // dispatch({ type: 'SET_PLAY', play: false })
           dispatch({ type: 'SET_BPM', bpm: null })

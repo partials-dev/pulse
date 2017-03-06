@@ -1,0 +1,10 @@
+.tiles {
+  column-width: 215px;
+  column-gap: 15px;
+  width: 90%;
+  margin: 50px auto;
+}
+
+.tiles .tile {
+  column-break-inside: avoid;
+}
