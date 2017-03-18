@@ -2,6 +2,8 @@ import React from 'react'
 import MetronomePage from './work/metronome-page'
 import SearchPage from './work/search'
 import { SET_SPIRIT_ANIMAL_SRC } from '../reducers/actions'
+import gifCache from '../gif-cache'
+import path from 'path'
 
 import { connect } from 'react-redux'
 
@@ -21,6 +23,10 @@ function mapDispatchToProps (dispatch) {
     onDrop: e => {
       e.preventDefault()
       const src = e.dataTransfer.files[0].path
+      gifCache.set({
+        id: path.parse(src).name,
+        url: src
+      })
       dispatch({ type: SET_SPIRIT_ANIMAL_SRC, src })
       return false
     },

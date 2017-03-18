@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Tiles from '../../look/tiles'
 import defineBeatGif from '../define-beat-gif'
 import { TOGGLE_SEARCH, SET_SPIRIT_ANIMAL_SRC } from '../../../reducers/actions'
+import gifCache from '../../../gif-cache'
 
 const xor = (a, b) => (a && !b) || (!a && b)
 const onlyOneIsDefined = (a, b) => xor(a == null, b == null)
@@ -38,8 +39,19 @@ function getBeatGifForResult (result) {
     return {
       key: result.id,
       onClick: () => {
-        dispatch({ type: SET_SPIRIT_ANIMAL_SRC, src: result.original.url })
-        dispatch({ type: TOGGLE_SEARCH })
+        gifCache.set({ id: result.id, url: result.original.url }).then(localPath => {
+          dispatch({ type: SET_SPIRIT_ANIMAL_SRC, src: localPath })
+          dispatch({ type: TOGGLE_SEARCH })
+        })
+        // window.fetch(result.original.url).then(response => {
+        //   return response.arrayBuffer()
+        // }).then(arrayBuffer => {
+        //   var buffer = new Buffer(arrayBuffer)
+        //   return saveToAppData(buffer, ['gif-cache'], `${result.id}_original.gif`)
+        // }).then(localPath => {
+        //   dispatch({ type: SET_SPIRIT_ANIMAL_SRC, src: localPath })
+        //   dispatch({ type: TOGGLE_SEARCH })
+        // })
       }
     }
   }

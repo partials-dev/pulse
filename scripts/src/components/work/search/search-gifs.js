@@ -1,3 +1,4 @@
+
 const searchUrlFor = (query, limit, offset) => {
   const api = 'http://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&'
   return api + `q=${query}&limit=${limit}&offset=${offset}`
@@ -18,7 +19,6 @@ export default function searchGifs (query, page = 0, limit = 25) {
     const srces = json.data.map(gifData => {
       const fixedWidth = parseWidthAndHeight(gifData.images.fixed_width)
       const original = parseWidthAndHeight(gifData.images.original)
-
       return {
         fixedWidth,
         original,

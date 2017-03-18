@@ -17,7 +17,7 @@ function mapDispatchToProps (dispatch) {
 function SpiritAnimal ({ toggleSearch }) {
   return <OverlayDescription
     id='spirit-animal'
-    description='Click to change'
+    description='Change gifs'
     onClick={toggleSearch}>
     <SpiritAnimalGif />
   </OverlayDescription>

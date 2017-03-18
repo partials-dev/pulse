@@ -36,10 +36,19 @@ button:hover * {
   cursor: pointer;
 }
 
-#container {
+body {
+  overflow-y: hidden;
+}
+
+#app-wrapper {
   text-align: center;
   padding-top: 60px;
   min-height: inherit;
+  height: 100vh;
+  // position: absolute;
+  // top: 60px;
+  // bottom: 0;
+  // width: 100%;
 }
 
 input[type=number] {
