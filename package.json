@@ -53,7 +53,6 @@
     "react-mdl": "^1.9.0",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
-    "vkey": "^1.0.0",
     "web-audio-scheduler": "^1.1.0",
     "worker-timer": "^1.1.0",
     "x-gif": "^1.0.5"
