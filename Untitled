@@ -1,0 +1,190 @@
+# All Mimsy
+
+chord progression: F♯- E A C♯-
+tempo: 142 bpm
+key: F♯ minor
+
+intro 8
+
+verse 8
+verse 8
+chorus a (let it go) 8
+chorus b (at last) 8
+
+verse 8
+chorus a (let it go) 8
+chorus b (at last) 8
+chorus a (let it go) 8
+
+bridge a 8
+bridge b 8
+bridge c 8
+break 4
+
+chorus a (let it go) 8
+chorus a (let it go) 8
+outro 8
+
+# Futures
+
+tempo: 145 bpm
+key: B minor
+chord progression
+  solos
+    A section: B-
+    B section: E-
+
+intro 8
+
+verse 8
+verse 8
+chorus 8
+  bars 4 and 8 change to 5/4
+
+link 8
+verse 8
+verse 8
+chorus 8
+  bars 4 and 8 change to 5/4
+
+guitar solo 32 (AABA)
+keys solo 32 (AABA)
+chorus' 8
+  build
+
+chorus 8
+  bars 4 and 8 change to 5/4
+chorus 8
+  bars 4 and 8 change to 5/4
+  false ending
+
+outro 8
+  intro reprise
+
+# In The Clouds
+
+intro 16
+  2 percussion
+  4 add guitar
+  4 add vocals
+  4 repeat vocals
+  2 guitar break
+
+intro 4
+verse 4
+verse 4
+hook 4
+prechorus 4
+chorus 8
+
+hook 4
+verse 4
+prechorus 4
+chorus 8
+
+solo 12
+  4 hook
+  4 verse groove
+  4 chorus groove
+chorus 8
+outro
+  2
+  8 add vocals
+  2 cut drums
+
+# Man
+
+chord progression
+  verse
+    G B-/D
+  outro
+    B- E
+    ""
+    ""
+    F♯- C♯-
+tempo: 92 bpm
+key: G major
+
+intro 4
+
+verse 8
+verse 8
+
+chorus 8
+
+verse 9
+
+chorus 8
+chorus 8
+
+break 3
+
+outro 36 = (8 x 4) + 4
+  last 4 fade
+
+# Sleepwalking In Heavy Rain
+
+tempo: 130 bpm
+key: E minor
+
+intro 12
+
+verse 8
+break 2
+
+verse 8
+hook 8
+
+verse 8
+hook 8
+hook' 10
+
+bridge
+jam
+
+## Structure Details
+
+intro 12
+  4 - guitar
+  4 - add keys groove (EB dyad)
+  4 - crash; add drums, congas, and blocks
+
+first verse 8
+  cut congas
+break 2
+  crash; add bass
+
+second verse 8
+  2 - keys on DB
+  2 - keys on EB
+  4 - keys on DEB
+hook 8
+  4 - crash
+      add congas
+      keys on EB
+      repeat low hook melody twice
+      bass starts first half of conga rhythm
+  4 - crash
+      repeat high hook melody twice
+
+third verse 8
+  2 - crash
+      bass starts conga rhythm
+hook 8
+  8 - crash; add jeff on last measure
+hook extension 10
+  4 - jeff and dane low unison melody
+      bass starts full rhythm
+      keys on DEB
+  6 - jeff and dane high unison melody
+      crescendo
+
+bridge 20
+  4 - kick, block, and keys groove continue
+      keys on EB
+  4 - add vocals
+      snare starts crescendo from silence
+  12 - crescendo; last bar is giant fill
+jam
+  crash
+  full groove

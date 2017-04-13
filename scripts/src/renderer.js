@@ -14,7 +14,7 @@ import rootReducer from './reducers'
 
 import { updateQuery, getActionsToSyncWithQuery } from './query'
 import gifCache from './gif-cache'
-import { SET_SPIRIT_ANIMAL_SRC } from './reducers/actions'
+import { SET_SPIRIT_ANIMAL_SRC, SET_ON_LINE } from './reducers/actions'
 
 const store = createStore(rootReducer)
 const dispatch = store.dispatch.bind(store)
@@ -24,7 +24,7 @@ store.subscribe(() => {
   const state = store.getState()
   MetronomeContainer({ state, dispatch })
   updateQuery(state.tempo)
-  // console.log(JSON.stringify(state.search.page))
+  // console.log(JSON.stringify(state.onLine))
 })
 
 // hydrate app
@@ -35,3 +35,7 @@ const cachedMetadata = gifCache.get()
 if (cachedMetadata) {
   dispatch({ type: SET_SPIRIT_ANIMAL_SRC, src: cachedMetadata.url })
 }
+
+// update online status every second
+const updateOnLineStatus = () => dispatch({ type: SET_ON_LINE, online: navigator.onLine })
+setInterval(updateOnLineStatus, 1000)

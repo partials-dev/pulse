@@ -10,6 +10,9 @@ const onlyOneIsDefined = (a, b) => xor(a == null, b == null)
 
 class SearchResults extends React.Component {
   shouldComponentUpdate (nextProps) {
+    if (nextProps.onLine !== this.props.onLine) {
+      return true
+    }
     if (nextProps.children.length !== this.props.children.length) {
       return true
     }
@@ -29,7 +32,11 @@ class SearchResults extends React.Component {
   }
   render () {
     // const children = this.props.loading ? 'loading...' : this.props.children
-    return this.props.loading ? <div>loading!</div> : <Tiles children={this.props.children} />
+    if (this.props.loading) {
+      return <div>loading!</div>
+    } else {
+      return <Tiles children={this.props.children} />
+    }
   }
 }
 
@@ -61,9 +68,9 @@ function getBeatGifForResult (result) {
   return component
 }
 
-function mapStateToProps ({ search: { results, loading } }) {
+function mapStateToProps ({ onLine, search: { results, loading } }) {
   const children = results.map(getBeatGifForResult)
-  return { children, loading }
+  return { children, loading, onLine }
 }
 
 function mapDispatchToProps (dispatch) {

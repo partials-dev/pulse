@@ -1,10 +1,12 @@
-import { SET_BPM, SET_TEMPO_CHANGE_INTERVAL, SET_BPM_DELTA, INCREMENT_BEAT, RESET_BEAT } from './actions'
+import { SET_STARTING_BPM, SET_BPM, SET_TEMPO_CHANGE_INTERVAL, SET_BPM_DELTA, INCREMENT_BEAT, RESET_BEAT } from './actions'
 import beatsBeforeChange from '../beats-before-change'
 import audioContext from '../audio-context'
+import beatDurationAt from '../beat-duration-at'
 
 export const defaultState = {
   beat: 0,
   bpm: 120,
+  startingBpm: 120,
   // bpmDelta: 0,
   // changeInterval: Number.POSITIVE_INFINITY
   bpmDelta: 5,
@@ -28,12 +30,19 @@ function incrementBeat (state) {
 
   // update beat timestamps
   const beatTimestamps = append(state.beatTimestamps, audioContext.currentTime)
+  const idealBeatDuration = beatDurationAt(state.bpm).inSeconds
+  const actualBeatDuration = beatTimestamps[beatTimestamps.length - 1] - beatTimestamps[beatTimestamps.length - 2]
+  const error = idealBeatDuration - actualBeatDuration
+  console.log(`Beat duration error: ${error * 1000}`)
   return Object.assign({}, state, { beatTimestamps, beat, bpm })
 }
 
-function bpmIsValid (bpm) {
-  return bpm === null ||
-    (typeof bpm === 'number' && bpm >= minBpm)
+function bpmIsInvalid (bpm) {
+  const isBigEnough = typeof bpm === 'number' && bpm >= minBpm
+  const isValid = isBigEnough || bpm === null
+  if (!isValid) {
+    return `bpm must be null or a number at least equal to ${minBpm}`
+  }
 }
 
 export default function tempoReducer (state, action = {}) {
@@ -41,8 +50,9 @@ export default function tempoReducer (state, action = {}) {
   state = Object.assign({}, defaultState, state)
   switch (action.type) {
     case SET_BPM:
-      if (!bpmIsValid(action.bpm)) {
-        throw new Error(`bpm must be null or a number at least equal to ${minBpm}`)
+      const reason = bpmIsInvalid(action.bpm)
+      if (reason) {
+        throw new Error(reason)
       }
       return Object.assign({}, state, { bpm: action.bpm })
     case SET_BPM_DELTA:

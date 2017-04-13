@@ -56,7 +56,7 @@ function getStateFromQuery () {
 export function getActionsToSyncWithQuery () {
   const { bpm, bpmDelta, changeInterval } = getStateFromQuery()
   const actions = []
-  if (bpm != null) { actions.push({ type: 'SET_BPM', bpm }) }
+  if (bpm != null) { actions.push({ type: 'SET_STARTING_BPM', bpm }) }
   if (bpmDelta != null) { actions.push({ type: 'SET_BPM_DELTA', bpmDelta }) }
   if (changeInterval != null) { actions.push({ type: 'SET_CHANGE_INTERVAL', changeInterval }) }
   return actions

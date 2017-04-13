@@ -1,4 +1,6 @@
 module.exports = {
+  SET_ON_LINE: 'SET_ON_LINE',
+
   // metronome
   SET_BPM: 'SET_BPM',
   SET_TEMPO_CHANGE_INTERVAL: 'SET_CHANGE_INTERVAL',
@@ -7,6 +9,7 @@ module.exports = {
   RESET_BEAT: 'RESET_BEAT',
   TOGGLE_PLAY: 'TOGGLE_PLAY',
   SET_PLAY: 'SET_PLAY',
+  SET_STARTING_BPM: 'SET_STARTING_BPM',
 
   // search
   TOGGLE_SEARCH: 'TOGGLE_SEARCH',

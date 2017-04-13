@@ -15,6 +15,10 @@ cd pulse
 npm install && npm start
 ```
 
+#### Acknowledgements
+
+The offline spirit animals were created by [SSWIII](switzonwigfall.com ), used under a Creative Commons license.
+
 #### License
 
 MIT © [C. Thomas Bailey](https://github.com/ctbailey)

@@ -45,3 +45,15 @@ export function readFile (filePath) {
     })
   })
 }
+
+export function readdir (dirname) {
+  return new Promise((resolve, reject) => {
+    fs.readdir(dirname, (err, filenames) => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve(filenames)
+      }
+    })
+  })
+}
